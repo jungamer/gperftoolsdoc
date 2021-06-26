@@ -6,7 +6,7 @@
 ### 2. 链接:
 > 执行文件链接```libtcmalloc.so```，替换glibc里原生的```malloc、free、new、delete```等内存操作函数；
 >>**方法 1**: 编译期链接: 
->>>```g++ -g -O0 test.cpp -L/lib64/ -ltcmalloc -o test```
+>>>```g++ -g -O0 test.cpp -L/lib64/ -ltcmalloc -o ./test```
 >>
 >>**方法 2**: 运行期链接: 
 >>>```g++ -g -O0 test.cpp -o test```
@@ -14,7 +14,7 @@
 
 ### 3. 运行：
 >```env HEAPCHECK=normal HEAPROFILE=/tmp/heapprofile HEAP_CHECK_IDENTIFY_LEAKS=1 LD_PRELOAD=/lib64/libtcmalloc.so ./test```
->**环境变量名解释**：
+>>**环境变量名解释**：
 >>1. ```HEAPCHECK=normal``` 获取数据的模式,通常用normal模式
 >>2. ```HEAPROFILE=/tmp/heapprofile``` 内存快照的文件名
 >>3. ```HEAP_CHECK_IDENTIFY_LEAKS=1``` 内存快照里包含调用堆栈信息
