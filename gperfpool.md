@@ -64,7 +64,9 @@ main(int argc, char** argv)
 ### 6. 用pprof工具分析内存快照文件
 >**不同格式输出**
 >>```pprof --text test heapprofile.0001.heap```
+>>
 >>```pprof --pdf test heapprofile.0001.heap > heapprofile.0001.heap.pdf```
+>>
 >>```pprof --svg test heapprofile.0001.heap> heapprofile.0001.heap.svg```
 
 >**输出调用堆栈信息**
@@ -119,13 +121,18 @@ main(int argc, char** argv)
 ```
 > 注：
 >>```HeapProfilerStart("heapfile")```: 开启分析,输入参数为生成的内存快照文件名称；
+>>
 >>```HeapProfilerDump("DumpOutReason1")```: 输出内存快照，参数为输出的原因；
+>>
 >>```HeapProfilerDump("DumpOutReason2")```: 生成第二个内存快照文件;
+>>
 >>```HeapProfilerStop()```: 停止分析;
 
 ### 8. 其它常用环境变量
 ```HEAP_PROFILE_ALLOCATION_INTERVAL```: 默认1073741824 (1 Gb), 每增长多少内存输出一个内存快照信息。
+
 ```HEAP_PROFILE_INUSE_INTERVAL```: 默认104857600 (100 Mb), 每一次性分配大于此值时输出一个内存快照信息。
 ### 9. 参考资料
 ```http://pages.cs.wisc.edu/~danb/google-perftools-0.98/heapprofile.html```
+
 ```http://pages.cs.wisc.edu/~danb/google-perftools-0.98/heap_checker.html```
