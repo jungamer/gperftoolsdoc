@@ -2,7 +2,7 @@
 ### 1. 安装
 > 1. 安装tcmalloc等链接库:  ```yum install gperftools-devel```
 > 2. 安装分析工具：```yum install pprof```
-> 3. 或者从源码安装：```https://github.com/gperftools/gperftools```
+> 3. 或者从源码安装：```https://github.com/gperftools/gperftools   autogen.sh && ./configure && make```
 ### 2. 链接:
 > 执行文件链接```libtcmalloc.so```，替换glibc里原生的```malloc、free、new、delete```等内存操作函数；
 >>**方法 1**: 编译期链接: 
